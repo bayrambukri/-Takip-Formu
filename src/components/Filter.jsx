@@ -15,15 +15,13 @@ const Filter = () => {
 
   const dispatch = useDispatch();
 
-  //*  DEBOUNCE
-  // Her tuş vuruşunda filtreleme yapmak hem client'ın cihazını hemde sunucuyu gereksiz yorar. Bu yüzden kullanıcın bir vutona basmasını gerektirmeyen inputlarda debounce yöntemi kullanılarak her tur vuruşunda ddeğiş kullanıcı yazma işlemeni sonlandırınca ilgili fonksiyonu çağırırız. Ardışık olarak gerçekleşen fonksiyon çağırma işlemlerinde fonksiyonun çağrıldığı görmezden gelir ancak belirli zaman aşımı olduğunda fonksiyonu çalıştırır
   useEffect(() => {
     if (text === undefined) return;
 
     // bir sayaç başlat ve sayaç durunca işlem yap
     const timer = setTimeout(() => setDebouncedText(text), 500);
 
-    // eğerki süre bitmeden tekrar useEffext çalışırsa (yeni sayaç başlaması) önceki sayacı iptal et
+    // süre bitmeden tekrar useEffext çalışırsa (yeni sayaç başlaması) önceki sayacı iptal et
     return () => clearTimeout(timer);
   }, [text]);
 

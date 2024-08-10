@@ -5,7 +5,6 @@ import { GiSuitcase } from 'react-icons/gi';
 import { FaCalendarDays } from 'react-icons/fa6';
 
 const Card = ({ job }) => {
-  // durumlara göre renk tanımladığımız nesne
   const colors = {
     Mülakat: 'green',
     Reddedildi: 'red',
