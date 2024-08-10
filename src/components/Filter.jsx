@@ -18,7 +18,7 @@ const Filter = () => {
   useEffect(() => {
     if (text === undefined) return;
 
-    // bir sayaç başlat ve sayaç durunca işlem yap
+    // sayaç başlat ve durunca işlem yap
     const timer = setTimeout(() => setDebouncedText(text), 500);
 
     // süre bitmeden tekrar useEffext çalışırsa (yeni sayaç başlaması) önceki sayacı iptal et
@@ -57,7 +57,7 @@ const Filter = () => {
       .catch((err) => dispatch(setError(err.message)));
   }, [debouncedText, status, sort, type]);
 
-  // bütün stateleri sıfırla
+  // tüm stateleri sıfırla
   const handleReset = () => {
     setDebouncedText();
     setText();
